@@ -10,7 +10,7 @@
   <!--
     - favicon
   -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
 
   <!--
     - custom css link
@@ -23,6 +23,126 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      background: #1E1E1F;
+      padding: 60px 20px;
+      min-height: 100vh;
+    }
+
+    .skills-section {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .skills-title {
+      text-align: left;
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-category {
+      background: #2A2A2B;
+      border-radius: 20px;
+      padding: 30px;
+      border: 1px solid #3A3A3B;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-3px);
+      border-color: #555;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .category-icon {
+      width: 50px;
+      height: 50px;
+      background: #3A3A3B;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .category-title {
+      font-size: 1.25rem;
+      color: #fff;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .tool-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #3A3A3B;
+      color: #E0E0E0;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .tool-item:hover {
+      background: #4A4A4B;
+      transform: translateY(-2px);
+    }
+
+    .tool-logo {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .skills-title {
+        font-size: 1.75rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-title {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+
+
 </head>
 
 
@@ -43,7 +163,7 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Richard hanrick" width="80">
+          <img src="./assets/images/rania.png" alt="Richard hanrick" width="80">
         </figure>
 
         <div class="info-content">
@@ -183,7 +303,7 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
+            <button class="navbar-link" data-nav-link>Skills</button>
           </li>
 
           <li class="navbar-item">
@@ -303,13 +423,16 @@
           - testimonials
         -->
 
-        <section class="testimonials">
+         <!--  <section class="testimonials">
 
           <h3 class="h3 testimonials-title">Skills</h3>
 
           <ul class="testimonials-list has-scrollbar">
 
             <li class="testimonials-item">
+
+
+
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
@@ -317,7 +440,7 @@
                 </figure>
 
                 <h4 class="h4 testimonials-item-title" data-testimonials-title>Docker</h4>
-                <!-- 
+              
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
                     Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
@@ -327,7 +450,7 @@
                     elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
                   </p>
                 </div> 
-                -->
+                
 
               </div>
             </li>
@@ -402,11 +525,12 @@
 
         </section>
 
-
+-->
         <!--
           - testimonials modal
         -->
 
+        
         <div class="modal-container" data-modal-container>
 
           <div class="overlay" data-overlay></div>
@@ -446,57 +570,84 @@
           </section>
 
         </div>
+ <section class="testimonials">
+   <h3 class="h3 service-title">Blog</h3>
+          <ul class="blog-posts-list">
 
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+
+                  <p class="blog-text">
+                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
+
+                  <p class="blog-text">
+                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+       <div style="text-align: right; margin-top: 20px;">
+            <a href="https://medium.com/@raniaa.brahmi" style="color: #FFDB70; text-decoration: none; font-weight: 500; font-size: 16px;">See all →</a>
+          </div>
+
+
+        
+
+        
+
+          </ul>
+
+        </section>
 
         <!--
           - clients
         -->
 
-        <section class="clients">
-
-          <h3 class="h3 clients-title">Clients</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-1-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-2-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-3-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-4-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-5-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-6-color.png" alt="client logo">
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
+     
 
       </article>
 
@@ -528,41 +679,36 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">University school of the arts</h4>
+              <h4 class="h4 timeline-item-title">ESPRIT (Private Higher School of Engineering and technologies Tunisia)</h4>
 
-              <span>2007 — 2008</span>
+              <span>2022 — 2025</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                IT Engineering Degree : IT Architecture & Cloud Computing
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">New york academy of art</h4>
+              <h4 class="h4 timeline-item-title">ESEN (Higher School of Digital Economics) of Manouba  </h4>
 
-              <span>2006 — 2007</span>
+              <span>2018 — 2021</span>
 
               <p class="timeline-text">
-                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-                omnis..
+                Bachelor in  IT management
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">High school of art and design</h4>
+              <h4 class="h4 timeline-item-title">Mahmoud Messaadi Secondary School, Ariana, Tunisia</h4>
 
-              <span>2002 — 2004</span>
+              <span>2014 — 2018</span>
 
               <p class="timeline-text">
-                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                magni dolores
-                eos.
+                
               </p>
 
             </li>
@@ -578,52 +724,78 @@
               <ion-icon name="book-outline"></ion-icon>
             </div>
 
-            <h3 class="h3">Experience</h3>
+            <h3 class="h3">Experiences</h3>
           </div>
 
           <ol class="timeline-list">
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Creative director</h4>
+              <h4 class="h4 timeline-item-title"> Cloud and DevOps Engineer- Kamioun Kriga</h4>
 
-              <span>2015 — Present</span>
+              <span>Jan 2025 — Sept 2025</span>
 
               <p class="timeline-text">
-                Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
-                molestias
-                exceptur.
+                Redesigned cloud infrastructure with Azure AKS and Container Apps, implemented CI/CD for Magento 2, OMS, and React Native apps using Jenkins, Azure DevOps, Docker, and ArgoCD, set up monitoring with Prometheus/Grafana, and optimized cloud costs.
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Art director</h4>
+              <h4 class="h4 timeline-item-title"> DevOps Engineer Intern- Alder Green Solutions</h4>
 
-              <span>2013 — 2015</span>
+              <span>Jul 2024 — Aug 2024</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                 Setup of CI/CD with GitHub Actions, containerization with Docker, and automated deployments on
+ Azure.
+ Environment separation via App Service, later migrated to AKS to improve deployment reliability.
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Web designer</h4>
+              <h4 class="h4 timeline-item-title">Web Developer Intern- Monétique Tunisie</h4>
 
-              <span>2010 — 2013</span>
+              <span>Jul 2023 — Aug 2023</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                 Development of an Angular frontend and a Spring Boot backend integrated with an Open Banking API
+ for secure transactions.
+ Interface optimization and improved payment processing reliability.
               </p>
 
             </li>
+
+                   <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Web Developer - Multicatering Tunisia</h4>
+
+              <span>Jun 2021 — Jul 2022</span>
+
+              <p class="timeline-text">
+                 Developed and deployed a B2B catering platform with an Angular frontend and Node.js backend, enabling clients to manage orders, track deliveries, and access real-time inventory on Azure.
+              </p>
+
+            </li>
+
+                          <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title"> Web Developer Intern- Benna Studio Agency</h4>
+
+              <span>Jan 2021 — May 2021</span>
+
+              <p class="timeline-text">
+               Development of an application for professional photographers using Angular, Node.js/ExpressJS, and
+ MongoDB.
+ Managed the project in Scrum, used Git/GitHub, and tested APIs with Postman, with an optimized
+ interface for productivity.
+              </p>
+
+            </li>
+
 
           </ol>
 
@@ -941,187 +1113,245 @@
         - #BLOG
       -->
 
-      <article class="blog" data-page="blog">
+      <article class="blog" data-page="skills">
 
         <header>
-          <h2 class="h2 article-title">Blog</h2>
+          <h2 class="h2 article-title">My skills</h2>
         </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
+ <section class="skills-section blog-posts">
+  
+
+    <div class="skills-grid">
+      <!-- CI/CD -->
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">🔄</div>
+          <h3 class="category-title">CI/CD Pipelines</h3>
+        </div>
+        <div class="tools-list">
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" class="tool-logo">
+            Jenkins
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions" class="tool-logo">
+            GitHub Actions
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure DevOps" class="tool-logo">
+            Azure DevOps
+          </span>
+        </div>
+      </div>
+
+      <!-- Containerization -->
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">📦</div>
+          <h3 class="category-title">Containerization & Orchestration</h3>
+        </div>
+        <div class="tools-list">
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="tool-logo">
+            Docker
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" class="tool-logo">
+            Kubernetes
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="AKS" class="tool-logo">
+            AKS
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="ACR" class="tool-logo">
+            ACR
+          </span>
+        </div>
+      </div>
+
+      <!-- Cloud Providers -->
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">☁️</div>
+          <h3 class="category-title">Cloud Platforms</h3>
+        </div>
+        <div class="tools-list">
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" class="tool-logo">
+            Azure
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure App Service" class="tool-logo">
+            Azure App Service
+          </span>
+          <span class="tool-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/OpenStack%C2%AE_Logo_2016.svg" alt="OpenStack" class="tool-logo">
+            OpenStack
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Hypernode" class="tool-logo">
+            Hypernode
+          </span>
+        </div>
+      </div>
+
+      <!-- IaC -->
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">🏗️</div>
+          <h3 class="category-title">Infrastructure as Code</h3>
+        </div>
+        <div class="tools-list">
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" class="tool-logo">
+            Terraform
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" alt="Ansible" class="tool-logo">
+            Ansible
+          </span>
+        </div>
+      </div>
+
+      <!-- GitOps -->
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">🔀</div>
+          <h3 class="category-title">GitOps & Version Control</h3>
+        </div>
+        <div class="tools-list">
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/argocd/argocd-original.svg" alt="ArgoCD" class="tool-logo">
+            ArgoCD
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="tool-logo">
+            Git
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="tool-logo">
+            GitHub
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab" class="tool-logo">
+            GitLab
+          </span>
+        </div>
+      </div>
+
+      <!-- Monitoring -->
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">📊</div>
+          <h3 class="category-title">Monitoring & Observability</h3>
+        </div>
+        <div class="tools-list">
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana" class="tool-logo">
+            Grafana
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" alt="Prometheus" class="tool-logo">
+            Prometheus
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure Monitor" class="tool-logo">
+            Azure Monitor
+          </span>
+        </div>
+      </div>
+
+      <!-- Security -->
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">🔒</div>
+          <h3 class="category-title">DevSecOps & Security</h3>
+        </div>
+        <div class="tools-list">
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sonarqube/sonarqube-original.svg" alt="SonarQube" class="tool-logo">
+            SonarQube
+          </span>
+          <span class="tool-item">
+            <img src="https://avatars.githubusercontent.com/u/79398517" alt="Trivy" class="tool-logo">
+            Trivy
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nexus/nexus-original.svg" alt="Nexus" class="tool-logo">
+            Nexus
+          </span>
+        </div>
+      </div>
+
+      <!-- Programming Languages -->
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">💻</div>
+          <h3 class="category-title">Programming Languages</h3>
+        </div>
+        <div class="tools-list">
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="tool-logo">
+            Java
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tool-logo">
+            Python
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash" class="tool-logo">
+            Bash Scripting
+          </span>
+        </div>
+      </div>
+
+      <!-- Databases -->
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">🗄️</div>
+          <h3 class="category-title">Databases</h3>
+        </div>
+        <div class="tools-list">
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="tool-logo">
+            MySQL
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="tool-logo">
+            MongoDB
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle" class="tool-logo">
+            Oracle
+          </span>
+        </div>
+      </div>
+
+      <!-- Tools & Methodologies -->
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">🛠️</div>
+          <h3 class="category-title">Tools & Methodologies</h3>
+        </div>
+        <div class="tools-list">
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="tool-logo">
+            Linux
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Scrum" class="tool-logo">
+            Scrum
+          </span>
+          <span class="tool-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" class="tool-logo">
+            Postman
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+       
 
       </article>
 
