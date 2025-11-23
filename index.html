@@ -24,17 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<script src="emailjs-config.js"></script>
 
-<script>
-  document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    emailjs.sendForm(serviceID, templateID, this)
-      .then(() => alert("Message sent!"))
-      .catch(() => alert("Error sending message"));
-  });
-</script>
 
 <body>
 
@@ -1164,22 +1154,41 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="#" class="form" data-form>
+          <form id="contact-form" class="form">
+        <div class="input-wrapper">
+            <input type="text" name="fullname" class="form-input" placeholder="Full name" required>
+            <input type="email" name="email" class="form-input" placeholder="Email address" required>
+        </div>
 
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+      <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
 
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
+        <button class="form-btn" type="submit">
+         <ion-icon name="paper-plane"></ion-icon>
+         <span>Send Message</span>
+      </button>
+      </form>
+<!-- 1️⃣ EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+<!-- 2️⃣ Config (clé publique, serviceID, templateID) -->
+<script src="emailjs-config.js"></script>
 
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
+<!-- 3️⃣ Script qui gère l'envoi -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("contact-form");
 
-          </form>
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+          alert("Message sent!");
+          this.reset();
+        })
+        .catch((err) => console.error(err));
+    });
+  });
+</script>
 
         </section>
 
