@@ -157,3 +157,74 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+
+// Liste de tes projets
+const projects = [
+  {
+    title: "Multi-Cloud Infrastructure Provisioning",
+    img: "./assets/images/projet-0.png",
+    desc: "Complete Infrastructure as Code (IaC) solution for deploying high-availability multi-cloud architecture with Terraform. This project demonstrates DevOps best practices for managing cloud resources across AWS, Azure, and GCP in a unified manner.",
+    link: "https://github.com/Rania1808/terraform-multicloud-infra/blob/main/README.md"
+  },
+  {
+    title: "NextJS Production-Ready CI/CD Pipeline",
+    img: "./assets/images/projet-1.jpg",
+    desc: "Modern production-ready CI/CD pipeline for Next.js application deployed on Azure Kubernetes Service (AKS) with GitOps, Nexus caching, and automated security scanning.",
+    link: "https://github.com/Rania1808/nextflow-azure/blob/main/README.md"
+  },
+  {
+    title: "Automated Monitoring & Scaling Trigger for Magento Server",
+    img: "./assets/images/projet-2.PNG",
+    desc: "A smart monitoring and alerting system for a Magento production server hosted on Hypernode. Using Prometheus, Alertmanager, Flask Webhook, and Ansible automation, the system monitors server performance and triggers automatic corrective actions — laying the foundation for future autoscaling.",
+    link: "https://github.com/Rania1808/devops-automation/blob/main/README.md"
+  },
+  {
+    title: "CI/CD Automation with GitHub Actions and Azure",
+    img: "./assets/images/projet-3.jpg",
+    desc: "A complete CI/CD pipeline implementation for deploying containerized web applications to Azure using GitHub Actions, with automated deployment to both development and production environments.",
+    link: "https://github.com/Rania1808/azure-webapp-cicd-pipeline/blob/main/README.md"
+  },
+  {
+    title: "CI/CD Pipeline for Magento E-Commerce Platform",
+    img: "./assets/images/projet-4.png",
+    desc: "a complete CI/CD pipeline for a Magento e-commerce application using Jenkins, focusing on automation, code quality, secure artifact management, and reliable deployment using Ansible.",
+    link: "https://github.com/Rania1808/Magento-CI-CD-Pipeline-/blob/main/README.md"
+  },
+  {
+    title: "Spring Boot CI/CD Pipeline with Jenkins, Docker & Monitoring",
+    img: "./assets/images/projet-5.png",
+    desc: "Built a complete CI/CD pipeline for a Spring Boot application with MySQL using Jenkins, Maven, SonarQube, JaCoCo, Nexus, Docker, and Docker Compose. The pipeline automates code testing, artifact management, image creation, and deployment, with Prometheus and Grafana for monitoring and Jenkins for notifications, improving code quality, deployment reliability, and delivery speed.",
+    link: "https://github.com/Rania1808/devops-cicd-pipeline/blob/main/README.md"
+  },
+  {
+    title: "Openstack iaas cloud",
+    img: "./assets/images/projet-6.png",
+    desc: "Infrastructure IaaS avec Open Stack et application web basés sur des microservices avec Angular et Spring Boot. Configuration de clusters Kubernetes et intégration de Docker pour un déploiement évolutif",
+    link: "https://github.com/Rania1808"
+  },
+
+];
+
+// Popup
+const popup = document.getElementById("popup");
+
+// Pour chaque icône
+document.querySelectorAll(".openPopup").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const project = projects[btn.dataset.id];
+
+    // Remplir le popup
+    document.getElementById("project-title").textContent = project.title;
+    document.getElementById("project-img").src = project.img;
+    document.getElementById("project-desc").textContent = project.desc;
+    document.getElementById("project-link").href = project.link;
+
+    popup.style.display = "block";
+  });
+});
+
+function closePopup() {
+  popup.style.display = "none";
+}
